@@ -2,11 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
+package etu1967.framework.servlet;
 
-
+import Utility.Find_Annotation;
+import etu1967.framework.Mapping;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +21,22 @@ import javax.servlet.http.HttpServletResponse;
  * @author itu
  */
 public class FrontServlet extends HttpServlet {
+    HashMap<String, Mapping> mappingUrls;
+     public void init() throws ServletException{
+        mappingUrls=new HashMap<String,Mapping>();
+        List<Find_Annotation.AnnotatedMethod> annotatedMethods;
+        try {
+            annotatedMethods = Find_Annotation.findAnnotatedMethods();
+            for (Find_Annotation.AnnotatedMethod method : annotatedMethods) {
+           // out.println("Annotated method " + method.getMethod().getName() + " in class " + method.getClassName() +" value ="+method.getValue());
+           Mapping mapping = new Mapping(method.getClassName(),method.getMethod().getName());
+           mappingUrls.put(method.getValue(), mapping);
+            }
 
+        } catch (Exception ex) {
+         //  out.println(ex.getMessage());
+        }
+    }
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,9 +57,15 @@ public class FrontServlet extends HttpServlet {
             out.println("<title>Servlet FrontServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>" + request.getContextPath() + request.getServletPath()+ "</h1>");  
+            out.println("<h1>" + request.getContextPath() + request.getRequestURL()+ "</h1>");  
             out.println("</body>");
             out.println("</html>");
+             out.println("La valeur du HashMap");
+         for (Map.Entry<String, Mapping> entry : mappingUrls.entrySet()) {
+            out.println("Url :  "+entry.getKey() + " ,  Class :" +entry.getValue().getClassName() + " , Method : " + entry.getValue().getMethod());
+        }
+          
+
         }
     }
 
