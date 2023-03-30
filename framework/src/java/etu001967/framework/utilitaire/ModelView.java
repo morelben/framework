@@ -7,7 +7,7 @@ package etu001967.framework.utilitaire;
 
 /**
  *
- * @author rindra
+ * @author morel
  */
 public class ModelView {
     String view ;

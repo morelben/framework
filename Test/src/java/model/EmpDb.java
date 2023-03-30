@@ -11,7 +11,7 @@ import etu001967.framework.utilitaire.Url;
 
 /**
  *
- * @author rindra
+ * @author morel
  */
 public class EmpDb {
           @Url(name="empdb-insert")

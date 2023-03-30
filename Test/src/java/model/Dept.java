@@ -12,7 +12,7 @@ import etu001967.framework.utilitaire.Url;
 
 /**
  *
- * @author rindra
+ * @author morel
  */
 public class Dept {
   

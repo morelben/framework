@@ -13,7 +13,7 @@ import javax.lang.model.element.Element;
 
 /**
  *
- * @author rindra
+ * @author morel
  */
 @Target(value = ElementType.METHOD)
 @Retention(value = RetentionPolicy.RUNTIME)
