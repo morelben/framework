@@ -9,7 +9,7 @@ import annotation.Url;
 
 /**
  *
- * @author rindra
+ * @author morel
  */
 public class Dept {
     String mat;

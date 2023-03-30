@@ -5,7 +5,7 @@ package etu002072.framework.servelet;
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-import etu002072.framework.Mapping;
+import etu001967.framework.Mapping;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;

@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rindra.test;
+package morel.test;
 
 import annotation.Url;
 import model.Emp;
 
 /**
  *
- * @author rindra
+ * @author morel
  */
 public class Test {
     @Url(name="test-insert")
