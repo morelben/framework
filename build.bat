@@ -8,11 +8,11 @@ cd "%TESTFRONT_DIR%\web\WEB-INF"
 
 mkdir lib 
 
-cd "%FRONT_DIR%\src\java\etu2038\framework"
+cd "%FRONT_DIR%\src\java\etu2005\framework"
 
 javac -d . *.java
 
-cd "%FRONT_DIR%\src\java\etu2038\framework"
+cd "%FRONT_DIR%\src\java\etu2005\framework"
 
 jar -cvf %FRAME_DIR%Front.jar .
 
