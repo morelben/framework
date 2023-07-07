@@ -8,6 +8,7 @@
 
 import etu1967.framework.ModelView;
 import etu1967.framework.Parametre;
+import etu1967.framework.Scope;
 import etu1967.framework.UploadFile;
 import etu1967.framework.AnnotationController;
 import etu1967.framework.Url;
@@ -16,6 +17,7 @@ import etu1967.framework.Url;
  *
  * @author Best
  */
+@Scope()
 @AnnotationController
 public class Classtest {
     String nom;
@@ -87,9 +89,10 @@ public class Classtest {
     @Url(nom="getFile")
     public ModelView getFiles(){
         ModelView model = new ModelView();
-        System.out.println(this.getFile().getNom());
+        System.out.println(this);
         model.setView("index.jsp");
         return model;
     }
+
 
 }
